@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>RestrenaCar - Sign up</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<link rel="shortcut icon" href="img/icons/restrenarcar_icon.svg">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/mdb.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="container pl-0 pl-sm-3 pr-0 pr-sm-3">
+		<div class="row">
+			<div class="col-sm-12 col-md-6 col-lg-6">
+				<section class="section-sign_up">
+					<!-- Material form login -->
+					<div class="card section-sign_up_card z-depth-0" >
+						<h6 class="rounded default-color white-text z-depth-1 text-center">
+							Sign up to RestrenaCar.<img src="img/icons/coupe_default.png"  class="animated slideInLeft fast" alt=""> 
+						</h6>
+						<!--Card content-->
+						<br>
+						<div class="card-body p-5 rounded">
+							<div class="alert alert-danger d-none" role="alert" id="sign-up___err" style="margin-bottom: 2rem !important;">
+							</div>
+							<div class="alert alert-success d-none" role="alert" id="sign-up___check" style="margin-bottom: 2rem !important;">
+							</div>
+							<!-- Form -->
+							<form action="#!">
+								<div class="md-form">
+									<input type="text" id="sign-up_nombre" class="form-control">
+									<label for="sign-up_nombre" >Name</label>
+								</div>
+								<select class="mdb-select md-form colorful-select dropdown-default" id="sign-up_sexo">
+									<option disabled selected>Sex</option>
+									<option value="man">Man</option>
+									<option value="women">Woman</option>
+									<option value="other">Others</option>
+									<option value="no">I prefer not to say</option>
+								</select>
+								<!-- Email -->
+								<div class="md-form">
+									<input type="email" id="sign-up_email" class="form-control">
+									<label for="sign-up_email" >E-mail</label>
+								</div>
+								<!-- Password -->
+								<div class="md-form">
+									<input type="password" id="sign-up_password" class="form-control">
+									<label for="sign-up_password">Password</label>
+								</div>
+								<!-- Sign in button -->
+								<div class="justify-content-center">
+									<a href="#" onclick="sign_up();" class="w-50 btn btn-default btn-rounded d-none d-md-block">
+										<i class="fas fa-arrow-circle-right mr-1"></i> Sign up
+									</a>
+									<a class="btn-floating btn-lg btn-default d-block d-md-none text-right">
+										<i class="fas fa-arrow-circle-right"></i>
+									</a>
+								</div>
+								<!-- Register -->
+							</form>
+							<!-- Form -->
+						</div>
+						<br>
+						<h6 class="rounded grey-text text-center py-4 border-primary border border-light">
+							Already a RestrenaCar user?	<a href="sign-in.html" class="primary-lighter-hover">Login here.</a>
+						</h6>
+						<div class="row text-center pt-3 grey-lighter-hover">
+							<div class="col"><a href="index.html" class="primary-lighter-hover">Go home</a></div>
+							<div class="col"><span>Privacy</span></div>
+							<div class="col"><a href="contactanos.html" class="primary-lighter-hover">Contact</a></div>
+						</div>
+					</div>
+					<!-- Material form login -->
+				</section>
+			</div>
+			<div class="col-sm-12 col-md-6 col-lg-6">
+				<!-- Section -->
+				<section class="section-sign_up">
+					<ol class="step pl-0">
+						<li class="step-element pb-0">
+							<div class="step-number">
+								<span class="number">1</span>
+							</div>
+							<div class="step-excerpt">
+								<h6 class="font-weight-bold dark-grey-text mb-3">Create an account</h6>
+								<p class="text-muted">You need to create an account to view our extensive car catalogue.</p>
+							</div>
+						</li>
+						<li class="step-element pb-0">
+							<div class="step-number">
+								<span class="number">2</span>
+							</div>
+							<div class="step-excerpt">
+								<h6 class="font-weight-bold dark-grey-text mb-3">Sign in with your account created</h6>
+								<p class="text-muted">Enter and search for the car that best suits your needs.</p>
+							</div>
+						</li>
+						<li class="step-element pb-0">
+							<div class="step-number">
+								<span class="number">3</span>
+							</div>
+							<div class="step-excerpt">
+								<h6 class="font-weight-bold dark-grey-text mb-3">Filter through our catalogue and find the best car for you.</h6>
+								<p class="text-muted">Book and buy your car. It's as simple as that!</p>
+							</div>
+						</li>
+					</ol>
+				</section>
+				<!-- Section -->
+			</div>
+		</div>
+	</div>
+
+	
+	<!--Libreria de Bootstrap-->
+	<script src="bootstrap/js/jquery.min.js"></script>
+	<script src="bootstrap/js/popper.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/mdb.min.js"></script>
+	<script src="js/dades.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.mdb-select').materialSelect();
+		});
+	</script>
+</body>
+</html>

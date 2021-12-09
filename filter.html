@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>RestrenaCar - Filter</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="shortcut icon" href="img/icons/restrenarcar_icon.svg">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="w-100">
+    <h6 class="default-color white-text text-center py-1">
+      Welcome to <a href="index.html" class="text-white"><span class="nombreEmpresa"></span>.</a>
+      <img src="img/icons/compacto_default.png" class="animated slideInLeft fast" alt="car-compact">
+    </h6>
+    <div class="container p-5">
+      <p class="text-muted mt-4 text-center">Hello <span id="name_session_user" class="font-weight-bold"></span>, what
+        kind of car are you looking for?
+      </p>
+      <div class="row">
+        <!-- SELECT 1 -->
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+          <select class="mdb-select md-form colorful-select dropdown-default" id="filter_type_coche">
+            <option value="all">All types</option>
+            <option value="coupe">Coupe</option>
+            <option value="compacto">Compact</option>
+            <option value="cabrio">Cabrio</option>
+            <option value="berlina">Berlina</option>
+            <option value="monovolumen">Minivan</option>
+            <option value="furgoneta">Van</option>
+            <option value="4x4Suv">4x4 SUV</option>
+            <option value="familiar">Family</option>
+          </select>
+          <label class="mdb-main-label">Type of car </label>
+        </div>
+        <div class="col-lg-3"></div>
+        <!-- -->
+
+        <!-- SELECT 2 -->
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+          <select class="mdb-select md-form colorful-select dropdown-default" id="filter_combustible">
+            <option value="all">All types</option>
+            <option value="diesel">Diesel</option>
+            <option value="petrol">Petrol</option>
+          </select>
+          <label class="mdb-main-label">Type of fuel </label>
+        </div>
+        <div class="col-lg-3"></div>
+        <!-- -->
+
+        <!-- SELECT 3 -->
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+          <select class="mdb-select md-form colorful-select dropdown-default" id="filter_cambio">
+            <option value="all">All types</option>
+            <option value="automatic">Automatic</option>
+            <option value="manual">Manual</option>
+          </select>
+          <label class="mdb-main-label">Type of gearchange </label>
+        </div>
+        <div class="col-lg-3"></div>
+        <!-- -->
+
+        <!-- SELECT 4 -->
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+          <p class="text-default">Year</p>
+          <div class="row">
+            <div class="col">
+              <select class="mdb-select md-form colorful-select dropdown-default" id="filter_year1">
+              </select>
+              <label class="mdb-main-label">From</label>
+            </div>
+            <div class="col">
+              <select class="mdb-select md-form colorful-select dropdown-default" id="filter_year2">
+              </select>
+              <label class="mdb-main-label">To</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3"></div>
+        <!-- -->
+        <!-- BOTON -->
+        <div class="col-lg-12 text-center">
+          <a class="btn btn-outline-default" href="main.html">All cars</a>
+          <button class="btn btn-default" onclick="filter_cars();">Search</button>
+        </div>
+        <!-- -->
+      </div>
+
+      <!-- Grid row -->
+    <div class="row py-5 justify-content-center" id="filter-cars">
+    </div>
+
+    </div>
+  </div>
+
+  <!--Libreria de Bootstrap-->
+  <script src="bootstrap/js/jquery.min.js"></script>
+  <script src="bootstrap/js/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="bootstrap/js/mdb.min.js"></script>
+  <script src="js/dades.js"></script>
+  <script src="js/main.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.mdb-select').materialSelect();
+    });
+  </script>
+  <script type="text/javascript">
+    document.getElementById("name_session_user").innerHTML = sessionStorage['restrenacar_usuario'].split('@').shift();
+  </script>
+  <script type="text/javascript">
+    var min = 2000;
+    max = 2022;
+    select1 = document.getElementById('filter_year1');
+    select2 = document.getElementById('filter_year2');
+    for (var i = min; i <= max; i++) {
+      var opt = document.createElement('option');
+      opt.value = i;
+      opt.innerHTML = i;
+      select1.appendChild(opt);
+    }
+    for (var i = min; i <= max; i++) {
+      var opt = document.createElement('option');
+      opt.value = i;
+      opt.innerHTML = i;
+      select2.appendChild(opt);
+    }
+  </script>
+</body>
+</html>
